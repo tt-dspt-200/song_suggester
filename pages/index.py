@@ -16,29 +16,31 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
         
-            ## Your Value Proposition
+            ## Let us suggest similar song
 
-            Emphasize how the app will benefit users. Don't emphasize the underlying technology.
+            Is there a song you love and wish to find a song of the same likelyhood?
+            Tell us what song you love and we will suggest you 5 alike songs!
 
-            ✅ RUN is a running app that adapts to your fitness levels and designs personalized workouts to help you improve your running.
+            Emphasize how the app will benefit users.
 
-            ❌ RUN is the only intelligent running app that uses sophisticated deep neural net machine learning to make your run smarter because we believe in ML driven workouts.
-
+            ✅ RUN 
+            ❌ Not RUN
             """
         ),
-        dcc.Link(dbc.Button('Your Call To Action', color='primary'), href='/predictions')
+        dcc.Link(dbc.Button('Get your Songs', color='primary'), href='/predictions')
     ],
     md=4,
 )
 
-gapminder = px.data.gapminder()
-fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
-           hover_name="country", log_x=True, size_max=60)
+# gapminder = px.data.gapminder()
 
-column2 = dbc.Col(
-    [
-        dcc.Graph(figure=fig),
-    ]
-)
+# fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
+#            hover_name="country", log_x=True, size_max=60)
 
-layout = dbc.Row([column1, column2])
+# column2 = dbc.Col(
+#     [
+#         dcc.Graph(figure=fig),
+#     ]
+# )
+
+layout = dbc.Row([column1]) #, column2])
