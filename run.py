@@ -67,13 +67,16 @@ def display_page(pathname):
     if pathname == '/':
         return index.layout
     elif pathname == '/predictions':
-        return predictions.layout
+        return predictions.app.layout
     elif pathname == '/insights':
         return insights.layout
     elif pathname == '/process':
         return process.layout
     else:
         return dcc.Markdown('## Page not found')
+
+
+
 
 # Run app server: https://dash.plot.ly/getting-started
 if __name__ == '__main__':
