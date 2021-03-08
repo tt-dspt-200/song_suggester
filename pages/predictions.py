@@ -34,19 +34,19 @@ from dash.dependencies import Input, Output
 import datetime
 import plotly.express as px
 from dash.exceptions import PreventUpdate
-
-import pandas as pd
+# import pandas as pd
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-df = pd.read_csv('https://raw.githubusercontent.com/yestrella14/datasets/master/spotify_data_Reduced.csv')
+# df = pd.read_csv('https://raw.githubusercontent.com/yestrella14/datasets/master/spotify_data_Reduced.csv')
 
 #Create a dictionary with song name and Ids
 # song_dictionary = df.set_index('id')['name'].to_dict()
-song_dictionary = (df[['id', 'name']]).to_dict(orient='records')
-song_dictionary2 = (df[['name', 'id']]).to_dict(orient='records')
+# song_dictionary = (df[['id', 'name']]).to_dict(orient='records')
+song_dictionary= [{'id': '0cS0A1fUEUd1EW3FcF8AEI', 'name': 'Keep A Song In Your Soul'}, {'id': '0hbkKFIJm7Z05H8Zl9w30f', 'name': 'I Put A Spell On You'}, {'id': '11m7laMUgmOKqI3oYzuhne', 'name': 'Golfing Papa'}, {'id': '19Lc5SfJJ5O1oaxY0fpwfh','name': 'True House Music - Xavier Santos & Carlos Gomix Remix'}]
+# song_dictionary2 = (df[['name', 'id']]).to_dict(orient='records')
 # song_name_data = df['name'].unique()
 
 # options=[{'label': song_dictionary['name'], 'value': song_dictionary['id']}]
@@ -94,7 +94,7 @@ app.layout= dbc.Row([column1, column2])
 
 
 if __name__ == "__main__":
-    # print(song_dictionary[0])
+    # print(song_dictionary[:4])
     app.run_server(debug=True)
 
 # @app.callback(
